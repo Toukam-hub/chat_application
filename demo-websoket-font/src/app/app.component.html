@@ -2,17 +2,27 @@
 
   <div *ngIf="showFirstDiv" class="loginContainer shadow-lg">
     <h2 class="title">Enter Chatroom</h2>
-    <form class="login">
-
+    <form class="login" (ngSubmit)="onSubmit()" >
         <div class="mb-3">
           <label for="disabledTextInput" class="form-label">Nickname</label>
-          <input type="text" id="disabledTextInput" class="form-control" placeholder="@ui23">
+          <input type="text"
+                 id="disabledTextInput"
+                 class="form-control"
+                 placeholder="@ui23"
+                 [(ngModel)]="nickname"
+                 name="nickname"
+          >
         </div>
         <div class="mb-5">
           <label for="disabledTextInput" class="form-label">Real Name</label>
-          <input type="text" id="TextInput" class="form-control" placeholder="Jordan toukam">
+          <input type="text"
+                 id="TextInput"
+                 class="form-control"
+                 placeholder="Jordan toukam"
+                 [(ngModel)]="realname" name="realname"
+          >
         </div>
-        <button type="submit" class="btn btn-primary col-12">Enter chatroom</button>
+        <button type="submit" class="btn btn-primary col-12" [disabled]="!nickname || !realname">Enter chatroom</button>
     </form>
   </div>
 
@@ -26,8 +36,8 @@
           </ul>
         </div>
         <div class="bottom">
-          <p class="connected-user-name">hello toi</p>
-          <a>Logout</a>
+          <p class="connected-user-name">Connected user</p>
+          <button class="btn  btn-primary" (click)="logout()">Logout</button>
         </div>
       </div>
     </div>
