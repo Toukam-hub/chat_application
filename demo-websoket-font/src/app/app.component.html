@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div *ngIf="showFirstDiv" class="loginContainer shadow-lg">
+    <h2 class="title">Enter Chatroom</h2>
+    <form class="login">
+
+        <div class="mb-3">
+          <label for="disabledTextInput" class="form-label">Nickname</label>
+          <input type="text" id="disabledTextInput" class="form-control" placeholder="@ui23">
+        </div>
+        <div class="mb-5">
+          <label for="disabledTextInput" class="form-label">Real Name</label>
+          <input type="text" id="TextInput" class="form-control" placeholder="Jordan toukam">
+        </div>
+        <button type="submit" class="btn btn-primary col-12">Enter chatroom</button>
+    </form>
+  </div>
+
+  <div *ngIf="!showFirstDiv" class="chat d-flex col-12">
+    <div class="nav bg-primary text-white p-3" style="width: 30%;">
+      <div class="users-list">
+        <div class="user-list-container">
+          <h2>Online Users</h2>
+          <ul class="connectedUsers">
+
+          </ul>
+        </div>
+        <div class="bottom">
+          <p class="connected-user-name">hello toi</p>
+          <a>Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="area bg-light p-3 flex-grow-1">
+      <div class="chat-area">
+        <div class="user-chat"></div>
+        <div class="messageForm">
+          <input type="text" class="send">
+          <button class="btn btn-primary send-button" >
+            <i class="bi bi-send-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
